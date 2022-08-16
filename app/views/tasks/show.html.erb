@@ -1,0 +1,13 @@
+<h1>Annoying task <%= @task.title %>
+</h1>
+
+<p>Details: <%= @task.details %></p>
+<p>Completed: <%= @task.completed? %></p>
+
+<p><%= link_to "Edit this task", edit_task_path %></p>
+
+<%= link_to "Delete this task",
+  task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+<p><%= link_to "Back to your other tasks", tasks_path %></p>
